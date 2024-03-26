@@ -1,0 +1,19 @@
+{
+    "name": "irice/learning",
+    "type": "project",
+    "require-dev": {
+        "phpunit/phpunit": "*"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Irice\\Learning\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "irice",
+            "email": "sgetaplus@gmail.com"
+        }
+    ]
+}
