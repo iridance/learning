@@ -25,6 +25,7 @@ class PermutationTest extends TestCase
             ['BILLOBILLOLLOBBI', ["BILL", "BOB"], 3],
             ['CAT', ["ILOVEMYDOG", "CATS"], 0],
             ['ABCDXYZ', ["ABCD", "XYZ"], 1],
+            ['AAABBBB', ["AB", "B"], 4],
             ['AABBCCDDEEFFGGAABBCCDDEEFFGGAABBCCDDEEFFGGAABBCCDDEEFFGGAABBCCDDEEFFGGAABBCCDDEEFFGGAABBCCDDEEFFGAA', ['AA', 'BB', 'CC', 'DD', 'EE', 'FF', 'GG', 'HH', 'II', 'JJ'], 8],
         ];
     }

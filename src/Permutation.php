@@ -5,29 +5,33 @@ namespace Irice\Learning;
 /* task 1 */
 class Permutation
 {
-    public function solution($S, $L)
+    /**
+     * 
+     * @param string $S 字數最大100
+     * @param string[] $L 可選名字，最多10，字數最大100
+     * @return int 
+     */
+    public function solution(string $S, array $L): int
     {
-        /*
-        string $S 字串集, 長度100
-        string[] $L 可能名稱, 長度10，字串長度100
-        */
         $compareTimes = [0];
+        //拆成字碼總池
         $poll = str_split($S, 1);
         foreach ($L as $key => $name) {
-            //逐字挑
+            //逐字計算
             $charList = str_split($name, 1);
-            $next = true;
-            while ($next) {
+            $tmpPoll = $poll;
+            $nextChar = true;
+            while ($nextChar) {
                 foreach ($charList as $char) {
-                    $find = array_search($char, $poll);
+                    $find = array_search($char, $tmpPoll);
                     if ($find === false) {
-                        $next = false;
+                        $nextChar = false;
                         continue;
-                    }
-                    unset($poll[$find]);
+                    }   
+                    unset($tmpPoll[$find]);
                 }
                 //換下個候選字
-                if ($next === false) {
+                if ($nextChar === false) {
                     break;
                 }
                 //計算加總
