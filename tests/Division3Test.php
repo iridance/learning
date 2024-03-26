@@ -2,10 +2,9 @@
 
 declare(strict_types = 1);
 
-namespace Tests;
-
 use Irice\Learning\Division3;
 use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\CoversNothing;
 
@@ -20,6 +19,7 @@ class Division3Test extends TestCase
 
     #[CoversNothing]
     #[DataProvider('summaryProvider')]
+    #[Group('division3')]
     public function testSummary(string $input): void
     {
         $tmp = str_split($input, 1);
@@ -33,6 +33,7 @@ class Division3Test extends TestCase
 
     #[CoversNothing]
     #[DataProvider('solutionProvider')]
+    #[Group('division3')]
     public function testSolution(string $input): void
     {
         $this->assertEquals(330486, $this->_target::solution($input));
